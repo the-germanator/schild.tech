@@ -23,4 +23,4 @@ jobs:
 
     - name: Deploy Website
       run: |
-        aws s3 sync . s3://schild-tech --delete --exclude '.git/*' --exclude '.github/*'
+        aws s3 sync . s3://schild-tech --size-only --delete --exclude '.git/*' --exclude '.github/*'

@@ -1,18 +1,10 @@
-# This is a basic workflow to help you get started with Actions
-
 name: Publish Site to S3
-
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-
 jobs:
   deploy:
     name: Update S3 website content
@@ -29,6 +21,6 @@ jobs:
         aws-secret-access-key: ${{ secrets.SECRET_ACCESS_KEY }}
         aws-region: us-west-1
 
-    - name: Copy files to the test website with the AWS CLI
+    - name: Deploy Website
       run: |
-        aws s3 sync . s3://schild-tech --delete --exclude '.git/*'
+        aws s3 sync . s3://schild-tech --delete --exclude '.git/*' --exclude '.github/*'

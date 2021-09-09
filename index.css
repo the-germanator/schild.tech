@@ -4,6 +4,7 @@
 }
 body {
     background-color: black;
+    overflow: hidden;
 }
 a, a:active, a:visited {
     text-decoration: underline;
@@ -24,7 +25,7 @@ a:hover:before {
     margin-top: 10vh;
     border-radius: 6px;
     color: white;
-    font-family: 'Consolas';
+    font-family: 'Courier New';
     padding: 20px;
     padding-bottom: 400px;
     box-sizing: border-box;

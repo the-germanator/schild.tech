@@ -12,7 +12,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: hashicorp/setup-terraform@v1
-      working-directory: ./app
       with:
         do_token: ${{ secrets.DO_TOKEN }}
 

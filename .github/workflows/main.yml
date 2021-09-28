@@ -12,11 +12,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: hashicorp/setup-terraform@v1
-      with:
-        do_token: ${{ secrets.DO_TOKEN }}
 
     - name: Format TF
       run: terraform fmt terraform/
 
     - name: Plan TF
       run: terraform -chdir=terraform plan
+      env:
+        TF_VAR_do_token: ${{ secrets.DO_TOKEN }}

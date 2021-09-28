@@ -16,7 +16,7 @@ jobs:
         do_token: ${{ secrets.DO_TOKEN }}
 
     - name: Format TF
-      run: terraform fmt
+      run: terraform fmt terraform/
 
     - name: Plan TF
-      run: terraform plan
+      run: terraform plan terraform/

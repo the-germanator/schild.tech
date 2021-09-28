@@ -13,6 +13,9 @@ jobs:
     - uses: actions/checkout@v2
     - uses: hashicorp/setup-terraform@v1
 
+    - name: Initialize Terraform
+      run: terraform -chdir=terraform init
+
     - name: Format TF
       run: terraform fmt terraform/
 

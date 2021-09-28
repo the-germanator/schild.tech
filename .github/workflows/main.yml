@@ -9,6 +9,7 @@ jobs:
   terraform:
     name: Ensure environment is up-to-date
     runs-on: ubuntu-latest
+    working-directory: ./terraform
     steps:
     - uses: actions/checkout@v2
     - uses: hashicorp/setup-terraform@v1

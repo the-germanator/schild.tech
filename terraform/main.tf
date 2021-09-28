@@ -17,6 +17,7 @@ resource "digitalocean_droplet" "test" {
   name   = "test"
   region = "nyc3"
   size   = "s-1vcpu-1gb"
+  ssh_keys = [ "31420095" ]
 }
 
 
@@ -25,6 +26,7 @@ resource "digitalocean_droplet" "prod" {
   name   = "prod"
   region = "nyc3"
   size   = "s-1vcpu-1gb"
+  ssh_keys = [ "31420189" ]
 }
 
 resource "digitalocean_floating_ip_assignment" "test_floating_ips" {

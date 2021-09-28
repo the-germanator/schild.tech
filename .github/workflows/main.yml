@@ -16,10 +16,15 @@ jobs:
     - name: Initialize Terraform
       run: terraform -chdir=terraform init
 
-    - name: Format TF
+    - name: Format Terraform
       run: terraform fmt terraform/
 
-    - name: Plan TF
-      run: terraform -chdir=terraform plan
+    - name: Plan Terraform
+      run: terraform -chdir=terraform plan -out=planfile
+      env:
+        TF_VAR_do_token: ${{ secrets.DO_TOKEN }}
+    
+    - name: Plan Terraform
+      run: terraform -chdir=terraform apply --auto-approve planfile
       env:
         TF_VAR_do_token: ${{ secrets.DO_TOKEN }}

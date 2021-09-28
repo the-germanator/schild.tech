@@ -25,7 +25,7 @@ resource "digitalocean_droplet" "prod" {
   image  = "ubuntu-18-04-x64"
   name   = "prod"
   region = "nyc3"
-  size   = "s-1vcpu-1gb"
+  size   = "s-2vcpu-2gb"
   ssh_keys = [ "31420189" ]
 }
 

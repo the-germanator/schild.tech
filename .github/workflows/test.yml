@@ -31,6 +31,7 @@ jobs:
       run: terraform -chdir=terraform/test apply --auto-approve planfile
 
   deploy:
+    needs: init
     name: deployment
     runs-on: ubuntu-latest
     steps:

@@ -42,7 +42,7 @@ jobs:
         mkdir ~/.ssh
         echo $PRIVATE_KEY > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
-        ssh -i ~/.ssh/id_rsa root@test.schild.tech "ls"
+        ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa root@test.schild.tech "ls"
         
     # - name: Ensure nginx is installed & running
     #   run: ssh -o StrictHostKeyChecking=no root@test.schild.tech "apt install -y nginx; systemctl start nginx"

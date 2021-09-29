@@ -7,6 +7,10 @@ on:
   workflow_dispatch:
 jobs:
   terraform:
+    env:
+      TF_VAR_do_token: ${{ secrets.DO_TOKEN }}
+      TF_VAR_AWS_ACCESS_KEY_ID: ${{ secrets.DO_SPACES_TOKEN }}
+      TF_VAR_AWS_SECRET_ACCESS_KEY: ${{ secrets.DO_SPACES_SECRET }}
     name: Ensure environment is up-to-date
     runs-on: ubuntu-latest
     steps:
@@ -21,10 +25,6 @@ jobs:
 
     - name: Plan Terraform
       run: terraform -chdir=terraform/prod plan -out=planfile
-      env:
-        TF_VAR_do_token: ${{ secrets.DO_TOKEN }}
-    
+   
     - name: Apply Terraform
       run: terraform -chdir=terraform/prod apply --auto-approve planfile
-      env:
-        TF_VAR_do_token: ${{ secrets.DO_TOKEN }}

@@ -32,7 +32,7 @@ a:hover:before {
     border-top: 20px solid rgb(40,40,60);
 }
 .cursor {
-    animation: blinker 1s step-start infinite;
+    animation: blinker 0.5s step-start infinite;
 }
 @keyframes blinker {
     50% {

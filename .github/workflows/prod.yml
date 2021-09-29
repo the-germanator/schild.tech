@@ -1,4 +1,4 @@
-name: 
+name: PROD Deployment
 on:
   push:
     branches: [ main ]
@@ -7,12 +7,13 @@ on:
   workflow_dispatch:
 jobs:
   init:
-    name: Ensure environment is up-to-date
+    name: infrastructure
     runs-on: ubuntu-latest
     env:
       TF_VAR_do_token: ${{ secrets.DO_TOKEN }}
       AWS_ACCESS_KEY_ID: ${{ secrets.DO_SPACES_TOKEN }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.DO_SPACES_SECRET }}
+
     steps:
     - uses: actions/checkout@v2
     - uses: hashicorp/setup-terraform@v1
@@ -28,3 +29,19 @@ jobs:
    
     - name: Apply Terraform
       run: terraform -chdir=terraform/prod apply --auto-approve planfile
+
+  deploy:
+    needs: init
+    name: deployment
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: copy file via ssh key
+      uses: appleboy/scp-action@master
+      with:
+        host: schild.tech
+        username: root
+        port: 22
+        key: ${{ secrets.PROD_SSH_KEY }}
+        source: html/*
+        target: "/var/www/"

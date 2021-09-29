@@ -36,6 +36,7 @@ jobs:
     env:
       PRIVATE_KEY: ${{ secrets.TEST_SSH_KEY }}
 
+    steps:
     - name: Create Private Key
       run: echo $PRIVATE_KEY > ~/private_key
 

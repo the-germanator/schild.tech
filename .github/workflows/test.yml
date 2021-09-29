@@ -29,3 +29,19 @@ jobs:
    
     - name: Apply Terraform
       run: terraform -chdir=terraform/test apply --auto-approve planfile
+
+  deploy:
+    name: Deploy Website to TEST
+    runs-on: ubuntu-latest
+    env:
+      PRIVATE_KEY: ${{ secrets.TEST_SSH_KEY }}
+    
+    steps:
+    - name: Create Private Key
+      run: ssh-add - <<< "${PRIVATE_KEY}"
+
+    - name: Ensure nginx is installed & running
+      run: ssh root@test.schild.tech "apt get install -y nginx; systemctl start nginx"
+
+    - name: Copy data over
+      run: scp pub root@test.schild.tech:/var/www/html

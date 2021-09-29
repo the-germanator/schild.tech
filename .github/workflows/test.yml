@@ -37,12 +37,16 @@ jobs:
       PRIVATE_KEY: ${{ secrets.TEST_SSH_KEY }}
 
     steps:
-    - name: Create Private Key
-      run: |
-        mkdir ~/.ssh
-        echo $PRIVATE_KEY > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
-        ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa root@test.schild.tech "ls"
+    - name: multiple command
+      uses: appleboy/ssh-action@master
+      with:
+        host: "test.schild.tech"
+        username: root"
+        key: ${{ secrets.TEST_SSH_KEY }}
+        port: 22
+        script: |
+          whoami
+          ls -al
         
     # - name: Ensure nginx is installed & running
     #   run: ssh -o StrictHostKeyChecking=no root@test.schild.tech "apt install -y nginx; systemctl start nginx"

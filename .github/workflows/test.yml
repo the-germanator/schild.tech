@@ -41,6 +41,7 @@ jobs:
         run: |
           mkdir ~/.ssh \
           touch ~/.ssh/authorized_keys \
+          touch ~/.ssh/id_rsa \
           echo $PRIVATE_KEY > ~/.ssh/id_rsa \
           ssh-keygen -f ~/.ssh/id_rsa -y > ~/.ssh/id_rsa.pub \
           chmod -R 700 ~/.ssh \

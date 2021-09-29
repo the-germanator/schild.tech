@@ -41,7 +41,7 @@ jobs:
       run: echo $PRIVATE_KEY > ~/private_key; chmod 600 ~/private_key
 
     - name: Ensure nginx is installed & running
-      run: ssh -o StrictHostKeyChecking=no -i ~/private_key root@test.schild.tech "apt get install -y nginx; systemctl start nginx"
+      run: ssh -o StrictHostKeyChecking=no -i ~/private_key root@test.schild.tech "apt install -y nginx; systemctl start nginx"
 
     - name: Copy data over
       run: scp -o StrictHostKeyChecking=no -i ~/private_key pub root@test.schild.tech:/var/www/html

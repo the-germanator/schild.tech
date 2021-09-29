@@ -35,8 +35,12 @@ jobs:
     runs-on: ubuntu-latest
     env:
       PRIVATE_KEY: ${{ secrets.TEST_SSH_KEY }}
-    
+      DEBUG: "Hello World"
+
     steps:
+    - name: DEBUG
+      run: echo $DEBUG > ~/NOTprivatekey; cat ~/NOTprivatekey
+
     - name: Create Private Key
       run: echo $PRIVATE_KEY > ~/private_key
 

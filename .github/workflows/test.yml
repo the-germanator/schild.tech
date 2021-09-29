@@ -34,7 +34,7 @@ jobs:
     name: Deploy Website to TEST
     runs-on: ubuntu-latest
     env:
-      PRIVATE_KEY: ${{ secrets.TEST_SSH_KEY }}
+      PRIVATE_KEY: "Hello World"
 
     steps:
     - name: Create Private Key
@@ -42,7 +42,7 @@ jobs:
         mkdir ~/.ssh
         echo $PRIVATE_KEY > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
-        ssh-keygen -f ~/.ssh/id_rsa -y > ~/.ssh/id_rsa.pub
+        cat ~/.ssh/id_rsa
 
     - name: Ensure nginx is installed & running
       run: ssh -o StrictHostKeyChecking=no root@test.schild.tech "apt install -y nginx; systemctl start nginx"

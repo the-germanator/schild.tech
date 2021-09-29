@@ -40,7 +40,7 @@ jobs:
       - name: Serup SSH
         run: |
           mkdir ~/.ssh \
-          touch ~/.ssh/athorized_keys \
+          touch ~/.ssh/authorized_keys \
           chmod -R 700 ~/.ssh \
           chmod 640 ~/.ssh/authorized_keys \
           echo $PRIVATE_KEY > ~/.ssh/id_rsa \

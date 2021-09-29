@@ -1,4 +1,4 @@
-name: 
+name: TEST Deployment
 on:
   push:
     branches: [ test ]
@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 jobs:
   init:
-    name: Ensure environment is up-to-date
+    name: Deploy TEST infrastructure
     runs-on: ubuntu-latest
     env:
       TF_VAR_do_token: ${{ secrets.DO_TOKEN }}

@@ -1,4 +1,4 @@
-name: 
+name: PROD Deployment
 on:
   push:
     branches: [ main ]
@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 jobs:
   init:
-    name: Ensure environment is up-to-date
+    name: Deploy PROD infrastructure
     runs-on: ubuntu-latest
     env:
       TF_VAR_do_token: ${{ secrets.DO_TOKEN }}

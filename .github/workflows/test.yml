@@ -40,10 +40,9 @@ jobs:
     - name: Create Private Key
       run: |
         mkdir ~/.ssh
-        cd ~/.ssh
-        echo $PRIVATE_KEY > id_rsa
-        chmod 600 id_rsa
-        ssh-keygen -f /id_rsa -y > id_rsa.pub
+        echo $PRIVATE_KEY > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keygen -f ~/.ssh/id_rsa -y > ~/.ssh/id_rsa.pub
 
     - name: Ensure nginx is installed & running
       run: ssh -o StrictHostKeyChecking=no root@test.schild.tech "apt install -y nginx; systemctl start nginx"

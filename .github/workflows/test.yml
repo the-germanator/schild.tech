@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 jobs:
   init:
-    name: Deploy TEST infrastructure
+    name: infrastructure
     runs-on: ubuntu-latest
     env:
       TF_VAR_do_token: ${{ secrets.DO_TOKEN }}
@@ -31,22 +31,15 @@ jobs:
       run: terraform -chdir=terraform/test apply --auto-approve planfile
 
   deploy:
-    name: Deploy Website to TEST
+    name: deployment
     runs-on: ubuntu-latest
-    env:
-      PRIVATE_KEY: ${{ secrets.TEST_SSH_KEY }}
-
     steps:
-    - uses: actions/checkout@v2
-      env:
-        USERNAME: root
-        HOST: test.schild.tech
-        KEY: ${{ secrets.TEST_SSH_KEY }}
+    - name: copy file via ssh key
+      uses: appleboy/scp-action@master
       with:
-        source: './pub/'
-        target: '/var/www/html'
-    - uses: appleboy/scp-action@master
-
-    - name: DEBUG
-      run: ls -lah
-
+        host: test.schild.tech
+        username: root
+        port: 22
+        key: ${{ secrets.TEST_SSH_KEY }}
+        source: "pub/*"
+        target: "test"

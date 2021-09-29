@@ -37,19 +37,18 @@ jobs:
       PRIVATE_KEY: ${{ secrets.TEST_SSH_KEY }}
 
     steps:
-    - name: multiple command
-      uses: appleboy/ssh-action@master
-      with:
-        host: "test.schild.tech"
-        username: root"
-        key: ${{ secrets.TEST_SSH_KEY }}
-        port: 22
-        script: |
-          whoami
-          ls -al
+      - name: Serup SSH
+        run: |
+          mkdir ~/.ssh
+          touch ~/.ssh/athorized_keys
+          chmod -R 700 ~/.ssh
+          chmod 640 ~/.ssh/authorized_keys
+          echo $PRIVATE_KEY > ~/.ssh/id_rsa
+          chmod 700 ~/.ssh/id_rsa
+          ssh-keygen -f ~/.ssh/id_rsa -y > ~/.ssh/id_rsa.pub
         
-    # - name: Ensure nginx is installed & running
-    #   run: ssh -o StrictHostKeyChecking=no root@test.schild.tech "apt install -y nginx; systemctl start nginx"
+    - name: Ensure nginx is installed & running
+      run: ssh -o StrictHostKeyChecking=no root@test.schild.tech "apt install -y nginx; systemctl start nginx"
 
     # - name: Copy data over
     #   run: scp -o StrictHostKeyChecking=no pub root@test.schild.tech:/var/www/html

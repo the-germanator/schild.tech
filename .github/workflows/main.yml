@@ -14,17 +14,17 @@ jobs:
     - uses: hashicorp/setup-terraform@v1
 
     - name: Initialize Terraform
-      run: terraform -chdir=terraform init
+      run: terraform -chdir=terraform/prod init
 
     - name: Format Terraform
-      run: terraform fmt terraform/
+      run: terraform fmt terraform/prod/
 
     - name: Plan Terraform
-      run: terraform -chdir=terraform plan -out=planfile
+      run: terraform -chdir=terraform/prod plan -out=planfile
       env:
         TF_VAR_do_token: ${{ secrets.DO_TOKEN }}
     
-    - name: Plan Terraform
-      run: terraform -chdir=terraform apply --auto-approve planfile
+    - name: Apply Terraform
+      run: terraform -chdir=terraform/prod apply --auto-approve planfile
       env:
         TF_VAR_do_token: ${{ secrets.DO_TOKEN }}

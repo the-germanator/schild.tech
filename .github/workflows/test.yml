@@ -38,12 +38,10 @@ jobs:
     
     steps:
     - name: Create Private Key
-      run: |
-        cat /dev/zero | ssh-keygen -q -N "" \
-        echo $PRIVATE_KEY > ~/.ssh/id_rsa
+      run: echo $PRIVATE_KEY > ~/private_key
 
     - name: Ensure nginx is installed & running
-      run: ssh root@test.schild.tech "apt get install -y nginx; systemctl start nginx"
+      run: ssh -i ~/private_key root@test.schild.tech "apt get install -y nginx; systemctl start nginx"
 
     - name: Copy data over
-      run: scp pub root@test.schild.tech:/var/www/html
+      run: scp -i ~/private_key pub root@test.schild.tech:/var/www/html

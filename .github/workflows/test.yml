@@ -39,7 +39,8 @@ jobs:
     steps:
     - name: Create Private Key
       run: |
-        mkdir ~/.ssh; cd ~/.ssh \
+        mkdir ~/.ssh \
+        cd ~/.ssh \
         echo $PRIVATE_KEY > id_rsa \
         chmod 600 id_rsa \
         ssh-keygen -f /id_rsa -y > id_rsa.pub

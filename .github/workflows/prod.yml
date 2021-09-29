@@ -6,20 +6,16 @@ on:
     branches: [ main ]
   workflow_dispatch:
 jobs:
-  terraform:
+  init:
     name: Ensure environment is up-to-date
     runs-on: ubuntu-latest
     env:
       TF_VAR_do_token: ${{ secrets.DO_TOKEN }}
       AWS_ACCESS_KEY_ID: ${{ secrets.DO_SPACES_TOKEN }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.DO_SPACES_SECRET }}
-      TEST123: 'Hello World!'
     steps:
     - uses: actions/checkout@v2
     - uses: hashicorp/setup-terraform@v1
-
-    - name: DEBUG
-      run: echo $TEST123
 
     - name: Initialize Terraform
       run: terraform -chdir=terraform/prod init

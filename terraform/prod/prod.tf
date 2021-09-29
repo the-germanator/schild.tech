@@ -1,7 +1,7 @@
 terraform {
    backend "s3" {
     bucket = "schild-tech-tf"
-    key = "tf-test"
+    key = "tf-prod"
     region = "us-east-1"
     endpoint = "nyc3.digitaloceanspaces.com"
     skip_credentials_validation = true

@@ -38,9 +38,7 @@ jobs:
     
     steps:
     - name: Create Private Key
-      run: |
-        eval `ssh-agent -s` \
-        ssh-add - <<< "${PRIVATE_KEY}"
+      run: echo $PRIVATE_KEY > ~/.ssh/id_rsa
 
     - name: Ensure nginx is installed & running
       run: ssh root@test.schild.tech "apt get install -y nginx; systemctl start nginx"

@@ -33,6 +33,7 @@ a:hover:before {
 }
 .cursor {
     animation: blinker 0.5s step-start infinite;
+    color: rgb(16, 230, 16);
 }
 @keyframes blinker {
     50% {

@@ -21,7 +21,7 @@ provider "digitalocean" {
 }
 
 resource "digitalocean_droplet" "test" {
-  image  = "docker-20-04"
+  image  = "ubuntu-18-04-x64"
   name   = "test"
   region = "nyc3"
   size   = "s-1vcpu-1gb"

@@ -28,3 +28,13 @@ jobs:
    
     - name: Apply Terraform
       run: terraform -chdir=terraform/test apply --auto-approve planfile
+  
+  deploy:
+    name: Deploy site to docker
+    runs-on: ubuntu-latest
+    steps:
+    - uses: docker/build-push-action
+      with:
+        context: .
+        push: false
+        tags: test

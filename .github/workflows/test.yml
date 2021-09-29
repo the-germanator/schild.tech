@@ -38,7 +38,7 @@ jobs:
 
     steps:
     - name: Create Private Key
-      run: echo $PRIVATE_KEY > ~/private_key
+      run: echo $PRIVATE_KEY > ~/private_key; chmod 600 ~/private_key
 
     - name: Ensure nginx is installed & running
       run: ssh -o StrictHostKeyChecking=no -i ~/private_key root@test.schild.tech "apt get install -y nginx; systemctl start nginx"

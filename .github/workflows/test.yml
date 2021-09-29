@@ -42,5 +42,5 @@ jobs:
         username: root
         port: 22
         key: ${{ secrets.TEST_SSH_KEY }}
-        source: pub/*
-        target: "/var/www/html"
+        source: html/*
+        target: "/var/www/"

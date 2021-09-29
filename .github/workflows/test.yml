@@ -37,12 +37,12 @@ jobs:
       PRIVATE_KEY: ${{ secrets.TEST_SSH_KEY }}
 
     steps:
-      - name: Serup SSH
-        run: |
-          mkdir ~/.ssh \
-          touch ~/.ssh/authorized_keys \
-          touch ~/.ssh/id_rsa \
-          echo $PRIVATE_KEY > ~/.ssh/id_rsa \
-          ssh-keygen -f ~/.ssh/id_rsa -y > ~/.ssh/id_rsa.pub \
-          chmod -R 700 ~/.ssh \
-          chmod 640 ~/.ssh/authorized_keys
+    - name: ls -a via ssh
+      uses: fifsky/ssh-action@master
+      with:
+        command: |
+          cd /tmp
+          ls -a
+        host: test.schild.tech
+        user: root
+        key: ${{ secrets.TEST_SSH_KEY}}

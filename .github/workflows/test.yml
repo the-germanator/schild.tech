@@ -37,6 +37,9 @@ jobs:
       PRIVATE_KEY: ${{ secrets.TEST_SSH_KEY }}
 
     steps:
+    - name: DEBUG
+      run: ls
+
     - name: SCP files via ssh key
       uses: appleboy/scp-action@master
       env:
@@ -44,5 +47,5 @@ jobs:
         HOST: test.schild.tech
         KEY: ${{ secrets.TEST_SSH_KEY }}
       with:
-        source: './pub'
+        source: './pub/'
         target: '/var/www/html'

@@ -33,7 +33,7 @@ jobs:
     name: Deploy site to docker
     runs-on: ubuntu-latest
     steps:
-    - uses: docker/build-push-action
+    - uses: docker/build-push-action@latest
       with:
         context: .
         push: false

@@ -7,8 +7,8 @@ export const Home = () => {
         <div className="">
             <div className="h-64 bg-cover bg-center phone:h-40" style={{ backgroundImage: `url(${cover})` }}>
             </div>     
-            <img src={me} className="inline-block relative h-40 w-40 -top-20 left-10 rounded-full z-10 phone:w-32 phone:h-32 phone:left-32 phone:-top-16"></img>
-            <div className="inline-block relative h-24 left-20 -top-16 text-xl bg-white p-4 z-10 rounded-lg phone:w-full phone:left-0 phone:right-0">
+            <img src={me} className=" inline-block relative h-40 w-40 -top-20 left-10 rounded-full z-10 phone:w-32 phone:h-32 phone:left-32 phone:-top-16"></img>
+            <div className="shadow-md inline-block relative h-24 left-20 -top-16 text-xl bg-white p-4 z-10 rounded-lg phone:w-full phone:left-0 phone:right-0">
                 <h2 className="text-2xl">Christoph Victor Schild</h2>
                 <h3 className="text-xl">Software Engineer</h3>
             </div>
@@ -30,7 +30,7 @@ export const Home = () => {
                 </article>
                 <br />
                 <br />
-                <div className='mt-12'>
+                <div className='mt-6'>
                     <h2>Not Convinced? See What Others Are Saying:</h2>
                     <br />
                     <figure className='inline-block w-1/2 border-l-4 pl-4 mb-4 phone:w-full phone:mb-4'>

@@ -8,10 +8,10 @@ function App() {
   return (
     <div className="font-mono">
     <BrowserRouter>
-    <div className="fixed w-1/3 h-full p-10 phone:w-screen phone:p-0 phone:h-fit phone:relative">
+    <div className="fixed w-1/4 h-full p-10 phone:w-screen phone:p-0 phone:h-fit phone:relative">
       <NavBar />
     </div>
-    <div className="w-2/3 left-1/3 h-full relative phone:w-full phone:left-0">
+    <div className="w-3/4 left-1/4 h-full relative phone:w-full phone:left-0">
       <Content>
         <Routes>
             <Route path="/home" element={<Home />} />

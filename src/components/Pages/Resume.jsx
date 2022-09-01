@@ -10,18 +10,18 @@ const Header = () => {
 
 const LeftBar = () => {
     return (
-        <div className="w-1/3 inline-block phone:block phone:w-full">
+        <div className="w-1/3 pl-4 pr-4 inline-block phone:block phone:w-full">
             
-            <article className="text-sm mb-10">
-                <h3 className="text-xl mb-4 text-white bg-black inline-block w-3/4 pl-2 phone:w-full">Contact</h3><br />
+            <article className="text-sm mb-4">
+                <h3 className="text-xl mb-4 text-white bg-black inline-block w-full pl-2 phone:w-full">Contact</h3><br />
                 christoph@schild.tech<br />
                 (505) 577-9730<br />
                 /the-germanator<br />
                 /in/germanator<br />
             </article>
             
-            <article className="text-sm mb-10">
-                <h3 className="text-xl mb-4 text-white bg-black inline-block w-3/4 pl-2 phone:w-full">Education</h3><br />
+            <article className="text-sm mb-4">
+                <h3 className="text-xl mb-4 text-white bg-black inline-block w-full pl-2 phone:w-full">Education</h3><br />
                 B.S.B.A. INFORMATION SYSTEMS<br />
                 MINOR: COMPUTER SCIENCE<br />
                 CERTIFICATE: ENTERPRISE SYSTEMS<br />
@@ -29,8 +29,8 @@ const LeftBar = () => {
                 2016 - 2020
             </article>
             
-            <article className="text-sm mb-10">
-                <h3 className="text-xl mb-4 text-white bg-black inline-block w-3/4 pl-2 phone:w-full">AWARDS & CERTS</h3><br />
+            <article className="text-sm mb-4">
+                <h3 className="text-xl mb-4 text-white bg-black inline-block w-full pl-2 phone:w-full">Awards & Certs</h3><br />
                 CERTIFIED SOLUTIONS ARCHITECT<br />
                 Amazon Web Services (AWS)<br />
                 9/2021
@@ -49,7 +49,7 @@ const LeftBar = () => {
             </article>
 
             <article className="text-sm mb-10">
-                <h3 className="text-xl mb-4 text-white bg-black inline-block w-3/4 pl-2 phone:w-full">Skills</h3><br />
+                <h3 className="text-xl mb-4 text-white bg-black inline-block w-full pl-2 phone:w-full">Skills</h3><br />
                 Fluent German (Native Speaker)<br />
                 AWS, Azure<br />
                 DevOps (Gitlab), CI/CD<br />
@@ -64,17 +64,15 @@ const LeftBar = () => {
 
 const RightContent = () => {
     return (
-        <div className=" w-2/3 l-1/3 inline-block align-top phone:block phone:w-full">
+        <div className="w-2/3 l-1/3 pl-4 pr-4 inline-block align-top phone:block phone:w-full">
             
             <article className="text-sm mb-4">
-                <h3 className="text-xl mb-4 text-white bg-black inline-block w-3/4 pl-2 phone:w-full">Profile</h3><br />
+                <h3 className="text-xl mb-4 text-white bg-black inline-block w-full pl-2 phone:w-full">Profile</h3><br />
                 Software Engineer with experience developing and modernizing robust, cost-effective apps in the cloud. Passionate about serverless technologies, and the benefits they bring to organizations. Currently seeking new professional challenges.
             </article>
-            <br />
-            
 
             <article className="text-sm mb-2">
-                <h3 className="text-xl mb-4 text-white bg-black inline-block w-3/4 pl-2 phone:w-full">Professional Experience</h3><br />
+                <h3 className="text-xl mb-4 text-white bg-black inline-block w-full pl-2 phone:w-full">Professional Experience</h3><br />
                 SOFTWARE ENGINEER - SITE RELIABILITY ENGINEERING<br />
                 State Farm | Atlanta, GA | 6/2020 - Present (+Internship 2019)
             </article>
@@ -114,9 +112,9 @@ const RightContent = () => {
 export const Resume = () => {
 
     return (
-        <div className=" w-full left-0 p-10 phone:p-2">
-            <Header />
-            <LeftBar />
+        <div className=" w-full left-0 p-12 phone:p-2">
+            <Header className=""/>
+            <LeftBar className=""/>
             <RightContent />
         </div>
     )

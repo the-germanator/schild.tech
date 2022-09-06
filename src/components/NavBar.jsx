@@ -23,7 +23,6 @@ export const NavBar = () => {
                 <NavLink onClick={() => setNavOpen(!navOpen)} to="/projects" className={({isActive}) => isActive ? activeLink : inactiveLink}>Projects</NavLink>
                 <NavLink onClick={() => setNavOpen(!navOpen)} to="/contact" className={({isActive}) => isActive ? activeLink : inactiveLink}>Contact</NavLink>
             </div>
-            
         </div>
     )
 }

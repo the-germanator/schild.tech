@@ -10,7 +10,7 @@ const Header = () => {
 
 const LeftBar = () => {
     return (
-        <div className="w-1/3 pl-4 pr-4 inline-block phone:block phone:w-full">
+        <div className="w-1/3 pr-4 inline-block phone:block phone:w-full">
             
             <article className="text-sm mb-4">
                 <h3 className="text-xl mb-4 text-white bg-black inline-block w-full pl-2 phone:w-full">Contact</h3><br />
@@ -112,7 +112,7 @@ const RightContent = () => {
 export const Resume = () => {
 
     return (
-        <div className=" w-full left-0 p-12 phone:p-2">
+        <div className="w-full left-0 p-12 phone:p-2">
             <Header className=""/>
             <LeftBar className=""/>
             <RightContent />

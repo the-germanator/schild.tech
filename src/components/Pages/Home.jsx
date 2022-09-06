@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 
-import me from './me_3.jpg'
-import cover from './cover.jpg'
+import me from './me_3.jpeg'
+import cover from './cover_2.jpeg'
 export const Home = () => {
     return (
         <div className="">
@@ -44,6 +44,10 @@ export const Home = () => {
                     <figure className='inline-block w-1/2 border-l-4 pl-4 mb-4 phone:w-full phone:mb-4'>
                         <blockquote>⭐⭐⭐⭐⭐</blockquote>
                         <figcaption className="text-sm text-gray-600">- Anonymous</figcaption>
+                    </figure>
+                    <figure className='inline-block w-1/2 border-l-4 pl-4 mb-4 phone:w-full phone:mb-4'>
+                        <blockquote>You're such a nerd!</blockquote>
+                        <figcaption className="text-sm text-gray-600">- My Girlfriend</figcaption>
                     </figure>
                 </div>
             </div>

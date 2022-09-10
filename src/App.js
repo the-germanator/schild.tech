@@ -2,7 +2,7 @@
 import { BrowserRouter, Route, Routes, Redirect, Navigate } from 'react-router-dom';
 import { NavBar } from './components/NavBar';
 import { Content } from './components/Content';
-import { Home, Resume, Projects, Contact } from './components/Pages'
+import { Home, Resume, Projects } from './components/Pages'
 
 function App() {
   return (
@@ -17,7 +17,6 @@ function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/resume" element={<Resume />} />
             <Route path="/projects" element={<Projects />} />
-            <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<Navigate to="/home" />}></Route>
           </Routes>
         </Content>

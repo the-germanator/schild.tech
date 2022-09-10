@@ -14,10 +14,10 @@ const LeftBar = () => {
             
             <article className="text-sm mb-4">
                 <h3 className="text-xl mb-4 text-white bg-black inline-block w-full pl-2 phone:w-full">Contact</h3><br />
-                christoph@schild.tech<br />
-                (505) 577-9730<br />
-                /the-germanator<br />
-                /in/germanator<br />
+                <a className="underline" target="_BLANK" href="mailto:christoph@schild.tech">christoph@schild.tech</a><br />
+                <a className="underline" target="_BLANK" href="tel:+15055779730">(505) 577-9730</a><br />
+                <a className="underline" target="_BLANK" href="https://www.github.com/the-germanator">github.com/the-germanator</a><br />
+                <a className="underline" target="_BLANK"  href="https://linkedin.com/in/germanator">linkedin.com/in/germanator</a><br />
             </article>
             
             <article className="text-sm mb-4">
@@ -64,8 +64,7 @@ const LeftBar = () => {
 
 const RightContent = () => {
     return (
-        <div className="w-2/3 l-1/3 pl-4 pr-4 inline-block align-top phone:block phone:w-full">
-            
+        <div className="w-2/3 l-1/3 pl-4 phone:pl-0 pr-4 inline-block align-top phone:block phone:w-full">
             <article className="text-sm mb-4">
                 <h3 className="text-xl mb-4 text-white bg-black inline-block w-full pl-2 phone:w-full">Profile</h3><br />
                 Software Engineer with experience developing and modernizing robust, cost-effective apps in the cloud. Passionate about serverless technologies, and the benefits they bring to organizations. Currently seeking new professional challenges.
